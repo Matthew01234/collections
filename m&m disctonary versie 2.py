@@ -1,23 +1,22 @@
 import random
+kleuren = ['oranje', 'groen', 'bruin', 'blauw']
+dictonary = dict()
 
-def functie(aantal : int):
-    zak = list()
-    for x in range(aantal):
-        mmkleur = (kleur[random.randint(0,3)])
-        zak.append(mmkleur)
+def MmMdictonary (aantal):
+    global dictonary
+    dictonary = {
+        'groen' : 0,
+        'oranje': 0,
+        'bruin': 0,
+        'blauw': 0
+    }
+    for i in range(aantal):
+      gekozenkleur = random.choice(kleuren)  
+      dictonary[gekozenkleur] += 1
+    return dictonary
 
-    return zak
-
-
-
-kleur = ['oranje','blauw','groen','bruin']
-
-aantal = int(input('Hoeveeel M&Ms wilt u?\n>>>')) 
-zak = functie(aantal)
-print(zak)
-
-
-
+aantal = int(input ('Hoeveel moet er aan de zak toegevoegd worden?: '))
+print(MmMdictonary(aantal))
 
 def sorteren (kleur1, kleur2):
   if dictonary[kleur1] > dictonary[kleur2]: return kleur1, kleur2
